@@ -1,0 +1,24 @@
+﻿@model WebAppMovieTop.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="styled-title">Details</h1>
+
+<div class="container">
+    <div class="movie-card fade-in-up">
+        <img class="movie-poster" src="@Model.PosterPath" alt="@Model.Title" />
+        <div class="movie-info">
+            <h2 class="movie-title">@Model.Title</h2>
+            <p><strong>Director:</strong> @Model.Director</p>
+            <p><strong>Genre:</strong> @Model.Genre</p>
+            <p><strong>Year:</strong> @Model.Year</p>
+            <p><strong>Description:</strong> @Model.Description</p>
+        </div>
+    </div>
+    <p>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a> |
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </p>
+</div>
